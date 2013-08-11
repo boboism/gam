@@ -1,0 +1,31 @@
+<h1>Listing installation_sites</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Index</th>
+    <th>Key</th>
+    <th>Status</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @installation_sites.each do |installation_site| %>
+  <tr>
+    <td><%= installation_site.description %></td>
+    <td><%= installation_site.index %></td>
+    <td><%= installation_site.key %></td>
+    <td><%= installation_site.status %></td>
+    <td><%= installation_site.value %></td>
+    <td><%= link_to 'Show', installation_site %></td>
+    <td><%= link_to 'Edit', edit_installation_site_path(installation_site) %></td>
+    <td><%= link_to 'Destroy', installation_site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Installation site', new_installation_site_path %>

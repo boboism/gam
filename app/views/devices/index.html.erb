@@ -1,0 +1,85 @@
+<div class="row-fluid page-header">
+  <div class="span5">
+    <h3><%= t(".title", title: Device.model_name.human, default: t("helpers.views.index.title", title: Device.model_name.human)) %></h3>
+  </div>
+  <div class="span7">
+    <div class="pull-right">
+      <% if can? :create, Device %>
+        <div class="btn-group">
+          <%= link_to new_device_path, class: "btn" do %>
+            <i class="icon-plus"></i>
+            <span><%= t(".new", default: t("helpers.links.new")) %></span>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="btn-group">
+        <%= render "layouts/toolbar" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <%= form_tag Device, method: :get, class: "form-search" do %>
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="input-append">
+            <%= text_field_tag "[search][keywords]", nil, class: "search-query", placeholder: t(".placehoder", default: t("helpers.links.search_placeholder")), :"data-toggle" => "tooltip", :title => t(".placehoder", default: t("helpers.links.search_placeholder")) %>
+            <%= button_tag class: "btn" do %>
+              <i class="icon-search"></i>
+              <span><%= t(".search", default: t("helpers.links.search")) %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+
+    <table>
+      <thead>
+        <tr>
+          <th><%= Device.human_attribute_name(:device_name) %></th>
+          <th><%= Device.human_attribute_name(:device_no) %></th>
+          <th><%= Device.human_attribute_name(:category_id) %></th>
+          <th><%= Device.human_attribute_name(:service_date) %></th>
+          <th><%= Device.human_attribute_name(:responsible_by_id) %></th>
+          <th><%= Device.human_attribute_name(:service_status) %></th>
+          <th><%= Device.human_attribute_name(:user_department_id) %></th>
+          <th><%= Device.human_attribute_name(:operator_id) %></th>
+          <th><%= Device.human_attribute_name(:installation_site_id) %></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody> 
+        <% @devices.each do |device| %>
+          <tr>
+            <td><%= device.device_name %></td>
+            <td><%= device.device_no %></td>
+            <td><%= device.category.try(:value) %></td>
+            <td><%= device.service_date.try(:to_date) %></td>
+            <td><%= device.responsible_by.try(:name) %></td>
+            <td><%= device.service_status %></td>
+            <td><%= device.user_department.try(:value) %></td>
+            <td><%= device.operator.try(:name) %></td>
+            <td><%= device.installation_site.try(:value) %></td>
+            <td><%= link_to 'Show', device %></td>
+            <td><%= link_to 'Edit', edit_device_path(device) %></td>
+            <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+    <%= paginate @devices %>
+  </div>
+</div>

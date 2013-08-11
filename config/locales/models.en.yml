@@ -1,0 +1,49 @@
+defaults: &defaults
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "请填写当前密码"
+            password:
+              confirmation: "请再次填写密码确认"
+    models:
+      device:
+        one: "设备"
+        other: "设备"
+      category:
+        one: "设备类别"
+        other: "设备类别"
+
+    attributes:
+      device:
+        depreciation_methods:
+          average_life: '按月折旧'
+        service_statuses:
+          in_service: '在用'
+        device_name: '设备名称'
+        device_no: '设备编号'
+        specification: '规格'
+        category_id: '设备类别'
+        manufacturer_id: '生产厂商'
+        supplier_id: '经销商'
+        service_date: '购置时间'
+        depreciation_life: '折旧年限'
+        inspection_period: '检验周期'
+        inspection_date_prev: '上次检验'
+        inspection_date_next: '下次检验'
+        service_status: '使用状况'
+        user_department_id: '使用部门'
+        operator_id: '操作人员'
+        installation_site_id: '安装地点'
+        depreciation_method: '折旧方法'
+        salvage_rate: '净残率'
+        responsible_by_id: '资产负责人'
+        original_cost: '资产原值'
+      category:
+        id: "ID"
+        value: "名称"
+
+en:
+  <<: *defaults

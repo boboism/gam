@@ -1,0 +1,29 @@
+zh-CN:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "请填写当前密码"
+            password:
+              confirmation: "请再次填写密码确认"
+    models:
+      device:
+        one: "设备"
+        other: "设备"
+
+    attributes:
+      device:
+        depreciation_methods:
+          average_life: '按月折舊'
+        categorize_type: "新增类型"
+        categorize_types:
+          purchase_via_oa: "采购新增（OA系统）"
+          purchase: "采购新增"
+          financial_lease: "融资租入"
+          commercial_lease: "经营租入"
+          borrow: "借入"
+          free: "赠送"
+          inventory_profit: "盘盈"
+          other: "其他"

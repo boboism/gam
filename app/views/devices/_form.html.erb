@@ -1,0 +1,29 @@
+<%= simple_form_for(@device) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :device_name %>
+    <%= f.input :device_no %>
+    <%= f.input :specification %>
+    <%= f.input :category_id, collection: Category.selectable_list %>
+    <%= f.input :manufacturer_id, collection: Manufacturer.selectable_list %>
+    <%= f.input :supplier_id, collection: Supplier.selectable_list %>
+    <%= f.input :service_date %>
+    <%= f.input :original_cost %>
+    <%= f.input :responsible_by_id, collection: User.selectable_list %>
+    <%= f.input :depreciation_method, collection: Device.depreciation_method_list %>
+    <%= f.input :salvage_rate %>
+    <%= f.input :depreciation_life %>
+    <%= f.input :inspection_period %>
+    <%= f.input :inspection_date_prev %>
+    <%= f.input :inspection_date_next %>
+    <%= f.input :service_status, collection: Device.service_status_list %>
+    <%= f.input :user_department_id, collection: Department.selectable_list %>
+    <%= f.input :operator_id, collection: User.selectable_list %>
+    <%= f.input :installation_site_id, collection: InstallationSite.selectable_list %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

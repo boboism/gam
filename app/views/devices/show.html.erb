@@ -1,0 +1,100 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Device name:</b>
+  <%= @device.device_name %>
+</p>
+
+<p>
+  <b>Device no:</b>
+  <%= @device.device_no %>
+</p>
+
+<p>
+  <b>Specification:</b>
+  <%= @device.specification %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @device.category_id %>
+</p>
+
+<p>
+  <b>Manufacturer:</b>
+  <%= @device.manufacturer_id %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @device.supplier_id %>
+</p>
+
+<p>
+  <b>Acquisition date:</b>
+  <%= @device.acquisition_date %>
+</p>
+
+<p>
+  <b>Original cost:</b>
+  <%= @device.original_cost %>
+</p>
+
+<p>
+  <b>Responsible by:</b>
+  <%= @device.responsible_by_id %>
+</p>
+
+<p>
+  <b>Depreciation method:</b>
+  <%= @device.depreciation_method_id %>
+</p>
+
+<p>
+  <b>Depreciation rate:</b>
+  <%= @device.depreciation_rate %>
+</p>
+
+<p>
+  <b>Depreciation life:</b>
+  <%= @device.depreciation_life %>
+</p>
+
+<p>
+  <b>Inspection period:</b>
+  <%= @device.inspection_period %>
+</p>
+
+<p>
+  <b>Inspection date prev:</b>
+  <%= @device.inspection_date_prev %>
+</p>
+
+<p>
+  <b>Inspection date next:</b>
+  <%= @device.inspection_date_next %>
+</p>
+
+<p>
+  <b>Service status:</b>
+  <%= @device.service_status %>
+</p>
+
+<p>
+  <b>User department:</b>
+  <%= @device.user_department_id %>
+</p>
+
+<p>
+  <b>Operator:</b>
+  <%= @device.operator_id %>
+</p>
+
+<p>
+  <b>Installation site:</b>
+  <%= @device.installation_site_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>

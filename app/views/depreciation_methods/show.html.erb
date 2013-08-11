@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @depreciation_method.description %>
+</p>
+
+<p>
+  <b>Index:</b>
+  <%= @depreciation_method.index %>
+</p>
+
+<p>
+  <b>Key:</b>
+  <%= @depreciation_method.key %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @depreciation_method.status %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @depreciation_method.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_depreciation_method_path(@depreciation_method) %> |
+<%= link_to 'Back', depreciation_methods_path %>

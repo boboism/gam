@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @device_identifier.description %>
+</p>
+
+<p>
+  <b>Index:</b>
+  <%= @device_identifier.index %>
+</p>
+
+<p>
+  <b>Key:</b>
+  <%= @device_identifier.key %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @device_identifier.status %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @device_identifier.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_device_identifier_path(@device_identifier) %> |
+<%= link_to 'Back', device_identifiers_path %>

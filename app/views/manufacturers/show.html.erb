@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @manufacturer.description %>
+</p>
+
+<p>
+  <b>Index:</b>
+  <%= @manufacturer.index %>
+</p>
+
+<p>
+  <b>Key:</b>
+  <%= @manufacturer.key %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @manufacturer.status %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @manufacturer.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_manufacturer_path(@manufacturer) %> |
+<%= link_to 'Back', manufacturers_path %>

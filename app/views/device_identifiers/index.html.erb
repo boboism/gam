@@ -1,0 +1,31 @@
+<h1>Listing device_identifiers</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Index</th>
+    <th>Key</th>
+    <th>Status</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @device_identifiers.each do |device_identifier| %>
+  <tr>
+    <td><%= device_identifier.description %></td>
+    <td><%= device_identifier.index %></td>
+    <td><%= device_identifier.key %></td>
+    <td><%= device_identifier.status %></td>
+    <td><%= device_identifier.value %></td>
+    <td><%= link_to 'Show', device_identifier %></td>
+    <td><%= link_to 'Edit', edit_device_identifier_path(device_identifier) %></td>
+    <td><%= link_to 'Destroy', device_identifier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Device identifier', new_device_identifier_path %>

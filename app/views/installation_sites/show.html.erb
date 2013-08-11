@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @installation_site.description %>
+</p>
+
+<p>
+  <b>Index:</b>
+  <%= @installation_site.index %>
+</p>
+
+<p>
+  <b>Key:</b>
+  <%= @installation_site.key %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @installation_site.status %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @installation_site.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_installation_site_path(@installation_site) %> |
+<%= link_to 'Back', installation_sites_path %>
