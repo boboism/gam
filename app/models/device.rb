@@ -19,6 +19,10 @@ class Device < ActiveRecord::Base
                   :inspection_date_next, :inspection_date_prev, :inspection_period, :installation_site_id, :manufacturer_id, 
                   :operator_id, :original_cost, :responsible_by_id, :service_status, :specification, :supplier_id, :user_department_id
 
+  [:category, :installation_site, :manufacturer, :operator, :responsible_by, :supplier, :user_department].each do |delegate_object|
+    delegate :name, to: delegate_object, prefix: true, allow_nil: true
+  end
+
   validates :device_name, presence: true
   validates :device_no, presence: true
   validates :category_id, presence: true
@@ -66,6 +70,35 @@ class Device < ActiveRecord::Base
 
   end
 
-  def depreciation_method_name; Device::DEPRECIATION_METHODS.select{|key,value| value[:weight] == depreciation_method}[:description]; end
-  def service_status_name; Device::SERVICE_STATUSES.select{|key,value| value[:weight] == service_status}[:description]; end
+  def depreciation_method_name; Device::DEPRECIATION_METHODS.map(&:last).first{|status| status[:weight] == depreciation_method}[:description]; end
+  def service_status_name; Device::SERVICE_STATUSES.map(&:last).first{|status| status[:weight] == service_status}[:description]; end
+
+  def as_xls(options = {})
+    params = { id: id.to_s}
+    [
+      [:service_date, service_date], 
+      [:category_id, category_name], 
+      [:depreciation_life, depreciation_life], 
+      [:depreciation_method, depreciation_method_name],
+      [:salvage_rate, salvage_rate], 
+      [:device_name, device_name], 
+      [:device_no, device_no],
+      [:inspection_date_next, inspection_date_next], 
+      [:inspection_date_prev, inspection_date_prev],
+      [:inspection_period, inspection_period],
+      [:installation_site_id, installation_site_name],
+      [:manufacturer_id, manufacturer_name], 
+      [:operator_id, operator_name],
+      [:original_cost, original_cost],
+      [:responsible_by_id, responsible_by_name],
+      [:service_status, service_status_name],
+      [:specification, specification],
+      [:supplier_id, supplier_name],
+      [:user_department_id, user_department_name]
+    ].each do |pair|
+      params = params.merge(Device.human_attribute_name(pair.first) => pair.last)
+    end
+
+    params
+  end
 end

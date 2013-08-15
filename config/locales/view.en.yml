@@ -1,6 +1,7 @@
 en:
   devices:
     form:
+      title: "编辑设备"
       accounting_info: "资产信息"
       basic_info: "基本信息"
       maintenance_info: "维保信息"
@@ -8,3 +9,7 @@ en:
       accounting_info: "资产信息"
       basic_info: "基本信息"
       maintenance_info: "维保信息"
+    edit:
+      title: "编辑设备"
+    new:
+      title: "新增设备"

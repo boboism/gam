@@ -10,6 +10,7 @@ class DevicesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @devices }
+      format.xls { send_data @devices.to_xls }
     end
   end
 
