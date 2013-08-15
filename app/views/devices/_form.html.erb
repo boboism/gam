@@ -1,29 +1,97 @@
-<%= simple_form_for(@device) do |f| %>
+<%= simple_form_for(@device, :html => { :class => 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :device_name %>
-    <%= f.input :device_no %>
-    <%= f.input :specification %>
-    <%= f.input :category_id, collection: Category.selectable_list %>
-    <%= f.input :manufacturer_id, collection: Manufacturer.selectable_list %>
-    <%= f.input :supplier_id, collection: Supplier.selectable_list %>
-    <%= f.input :service_date %>
-    <%= f.input :original_cost %>
-    <%= f.input :responsible_by_id, collection: User.selectable_list %>
-    <%= f.input :depreciation_method, collection: Device.depreciation_method_list %>
-    <%= f.input :salvage_rate %>
-    <%= f.input :depreciation_life %>
-    <%= f.input :inspection_period %>
-    <%= f.input :inspection_date_prev %>
-    <%= f.input :inspection_date_next %>
-    <%= f.input :service_status, collection: Device.service_status_list %>
-    <%= f.input :user_department_id, collection: Department.selectable_list %>
-    <%= f.input :operator_id, collection: User.selectable_list %>
-    <%= f.input :installation_site_id, collection: InstallationSite.selectable_list %>
+    <fieldset>
+      <legend class="text-success"><%= t('.basic_info') %></legend>
+      <div class="row">
+        <span class="span6">
+          <%= f.input :device_name, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span6">
+          <%= f.input :device_no, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+      <div class="row">
+        <span class="span6">
+          <%= f.input :specification, input_html: {class: "input-block-level"} %> 
+        </span>
+        <span class="span6">
+          <%= f.input :category_id, collection: Category.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+      <div class="row">
+        <span class="span6">
+          <%= f.input :manufacturer_id, collection: Manufacturer.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span6">
+          <%= f.input :supplier_id, collection: Supplier.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+      <div class='row'>
+        <span class='span12'>
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="text-success"><%= t('.accounting_info') %></legend>
+      <div class="row">
+        <span class="span4">
+          <%= f.input :service_date, as: :string, input_html: {class: "input-block-level", :"data-behavior" => "datepicker"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :original_cost, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :responsible_by_id, collection: User.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+      <div class="row">
+        <span class="span4">
+          <%= f.input :depreciation_method, collection: Device.depreciation_method_list, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :salvage_rate, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :depreciation_life, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="text-success"><%= t('.maintenance_info') %></legend>
+      <div class="row">
+        <span class="span4">
+          <%= f.input :inspection_period, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :inspection_date_prev, as: :string, input_html: {class: "input-block-level", :"data-behavior" => "datepicker" } %>
+        </span>
+        <span class="span4">
+          <%= f.input :inspection_date_next, as: :string, input_html: {class: "input-block-level", :"data-behavior" => "datepicker" } %>
+        </span>
+      </div>
+      <div class="row">
+        <span class="span4">
+          <%= f.input :service_status, collection: Device.service_status_list, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span8">
+          <%= f.input :user_department_id, collection: Department.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+      <div class="row">
+        <span class="span4">
+          <%= f.input :operator_id, collection: User.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span8">
+          <%= f.input :installation_site_id, collection: InstallationSite.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+    </fieldset>
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="">
+    <%= f.button :submit, class: "btn btn-large btn-block btn-primary" %>
   </div>
 <% end %>

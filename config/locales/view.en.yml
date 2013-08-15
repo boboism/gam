@@ -1,0 +1,10 @@
+en:
+  devices:
+    form:
+      accounting_info: "资产信息"
+      basic_info: "基本信息"
+      maintenance_info: "维保信息"
+    show:
+      accounting_info: "资产信息"
+      basic_info: "基本信息"
+      maintenance_info: "维保信息"

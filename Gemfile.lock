@@ -36,6 +36,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datepicker-rails (1.1.1.6)
+      railties (>= 3.0)
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     builder (3.0.4)
@@ -46,7 +48,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    choice (0.1.6)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -81,7 +82,6 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     formatador (0.2.4)
-    git (1.2.5)
     guard (1.8.2)
       formatador (>= 0.2.4)
       listen (>= 1.0.0)
@@ -113,18 +113,10 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
-    lolcommits (0.2.0)
-      choice (~> 0.1.6)
-      git (~> 1.2.5)
-      launchy
-      methadone (~> 1.2.1)
-      rmagick (~> 2.13.1)
     lumberjack (1.0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    methadone (1.2.6)
-      bundler
     method_source (0.8.2)
     mime-types (1.23)
     mini_portile (0.5.1)
@@ -174,7 +166,6 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
-    rmagick (2.13.2)
     rolify (3.2.0)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -238,6 +229,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootstrap-datepicker-rails
   bootstrap-sass
   cancan
   capybara
@@ -252,9 +244,8 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   kaminari
-  lolcommits
   quiet_assets
-  rails (= 3.2.14)
+  rails (~> 3.2.14)
   rb-fchange
   rb-fsevent
   rb-inotify

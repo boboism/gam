@@ -1,5 +1,6 @@
 class MasterData < ActiveRecord::Base
   attr_accessible :description, :index, :key, :status, :type, :value
+  alias_attribute :name, :value
 
   before_save :generate_key
 

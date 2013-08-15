@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 ruby '1.9.3'
-gem 'rails', '3.2.14'
+gem 'rails', '~> 3.2.14'
 gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -9,6 +9,7 @@ group :assets do
 end
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
@@ -29,7 +30,6 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
-  gem 'lolcommits'
 end
 group :development, :test do
   gem 'factory_girl_rails'

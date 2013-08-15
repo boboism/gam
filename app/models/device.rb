@@ -19,6 +19,11 @@ class Device < ActiveRecord::Base
                   :inspection_date_next, :inspection_date_prev, :inspection_period, :installation_site_id, :manufacturer_id, 
                   :operator_id, :original_cost, :responsible_by_id, :service_status, :specification, :supplier_id, :user_department_id
 
+  validates :device_name, presence: true
+  validates :device_no, presence: true
+  validates :category_id, presence: true
+  validates :original_cost, presence: true, numericality: { greater_than_or_equal_to: 0}
+
   #validates :depreciation_life, presence: true, numbericality: {greater_than: 0}, if: :depreciation_method_id
   #validates :depreciation_method_id, inclusion: Device::DEPRECIATION_METHODS.collect{|k,v| v[:weight]}
 
@@ -29,6 +34,9 @@ class Device < ActiveRecord::Base
   belongs_to :responsible_by,    class_name: "User",             foreign_key: "responsible_by_id"
   belongs_to :supplier,          class_name: "Supplier",         foreign_key: "supplier_id"
   belongs_to :user_department,   class_name: "Department",       foreign_key: "user_department_id"
+
+  has_many :device_identifier_relationships, class_name: "ModelRelationship", as: :refer_to, dependent: :destroy
+  has_many :device_identifiers, through: :device_identifier_relationships, source: :refer_from, source_type: "MasterData", conditions: { type: "DeviceIdentifier" }
 
   scope :search, lambda{|params={}|
     params ||= {}
@@ -57,4 +65,7 @@ class Device < ActiveRecord::Base
     end
 
   end
+
+  def depreciation_method_name; Device::DEPRECIATION_METHODS.select{|key,value| value[:weight] == depreciation_method}[:description]; end
+  def service_status_name; Device::SERVICE_STATUSES.select{|key,value| value[:weight] == service_status}[:description]; end
 end
