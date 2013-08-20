@@ -43,12 +43,12 @@
   <span class="span4 text-left"><h4><%= @sparepart_trans_doc_in.user_department.try(:name) %></h4></span>
 </div>
 <div class="row-fluid">
-  <span class="span2 text-right text-info"><h4><%= SparepartTransDocIn.human_attribute_name(:trans_type) %></h4></span>
+  <span class="span2 text-right text-info"><h4><%= SparepartTransDocIn.human_attribute_name(:trans_type_id) %></h4></span>
   <span class="span4 text-left"><h4><%= @sparepart_trans_doc_in.trans_type.try(:name) %></h4></span>
   <span class="span2 text-right text-info"><h4><%= SparepartTransDocIn.human_attribute_name(:remark) %></h4></span>
   <span class="span4 text-left"><h4><%= @sparepart_trans_doc_in.remark %></h4></span>
 </div>
-<legend><%= t('.items') %></legend>
+<legend><%= SparepartTransDocIn.human_attribute_name(:items) %></legend>
 <% unless @sparepart_trans_doc_in.items.empty? %>
   <div class="row-fluid">
     <span class="span4 text-center"><h4><%= SparepartTransDocItemIn.human_attribute_name(:part_no) %></h4></span> 

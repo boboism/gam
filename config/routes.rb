@@ -1,4 +1,7 @@
 Gam::Application.routes.draw do
+  resources :sparepart_trans_doc_outs
+
+
   resources :trans_doc_in_types
 
 

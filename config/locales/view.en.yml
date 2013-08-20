@@ -43,6 +43,10 @@ en:
       title: "新建维修记录"
     show:
       title: "维修记录明细"
+    form:
+      device_fault_desc: ""
+      device_repqir_desc: ""
+      feed_back: ""
   sparepart_trans_doc_ins:
     index:
       title: "备件入库记录"

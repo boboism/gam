@@ -1,16 +1,16 @@
 <div class="row-fluid page-header">
   <div class="span5">
-    <h3><%= t(".title", title: SparepartTransDocIn.model_name.human, default: t("helpers.views.index.title", title: SparepartTransDocIn.model_name.human)) %></h3>
+    <h3><%= t(".title", title: SparepartTransDocOut.model_name.human, default: t("helpers.views.index.title", title: SparepartTransDocOut.model_name.human)) %></h3>
   </div>
   <div class="span7">
     <div class="pull-right">
-      <% if can? :create, SparepartTransDocIn %>
+      <% if can? :create, SparepartTransDocOut %>
         <div class="btn-group">
-          <%= link_to new_sparepart_trans_doc_in_path, class: "btn" do %>
+          <%= link_to new_sparepart_trans_doc_out_path, class: "btn" do %>
             <i class="icon-plus"></i>
             <span><%= t(".new", default: t("helpers.links.new")) %></span>
           <% end %>
-          <%= link_to sparepart_trans_doc_ins_path(request.parameters.merge({:format => :xls})), class: "btn" do %>
+          <%= link_to sparepart_trans_doc_outs_path(request.parameters.merge({:format => :xls})), class: "btn" do %>
             <i class="icon-download-alt"></i>
             <span><%= t(".download", default: t("helpers.links.download")) %></span>
           <% end %>
@@ -46,44 +46,44 @@
     <table class="table table-condensed table-hover">
       <thead>
         <tr>
-          <th><%= SparepartTransDocIn.human_attribute_name(:trans_date) %></th>
-          <th><%= SparepartTransDocIn.human_attribute_name(:doc_no) %></th>
-          <th><%= SparepartTransDocIn.human_attribute_name(:user_department_id) %></th>
-          <th><%= SparepartTransDocIn.human_attribute_name(:trans_type) %></th>
-          <th><%= SparepartTransDocIn.human_attribute_name(:items) %></th>
+          <th><%= SparepartTransDocOut.human_attribute_name(:trans_date) %></th>
+          <th><%= SparepartTransDocOut.human_attribute_name(:doc_no) %></th>
+          <th><%= SparepartTransDocOut.human_attribute_name(:user_department_id) %></th>
+          <th><%= SparepartTransDocOut.human_attribute_name(:trans_type) %></th>
+          <th><%= SparepartTransDocOut.human_attribute_name(:items) %></th>
           <th></th>
         </tr>
       </thead>
       <tbody> 
-        <% @sparepart_trans_doc_ins.each do |sparepart_trans_doc_in| %>
+        <% @sparepart_trans_doc_outs.each do |sparepart_trans_doc_out| %>
           <tr>
-            <td><%= sparepart_trans_doc_in.trans_date %></td>
-            <td><%= sparepart_trans_doc_in.doc_no %></td>
-            <td><%= sparepart_trans_doc_in.user_department.try(:id) %></td>
-            <td><%= sparepart_trans_doc_in.trans_type.try(:name) %></td>
+            <td><%= sparepart_trans_doc_out.trans_date %></td>
+            <td><%= sparepart_trans_doc_out.doc_no %></td>
+            <td><%= sparepart_trans_doc_out.user_department.try(:id) %></td>
+            <td><%= sparepart_trans_doc_out.trans_type.try(:name) %></td>
             <td>
               <ol>
-                <% sparepart_trans_doc_in.items.each do |item| %>
+                <% sparepart_trans_doc_out.items.each do |item| %>
                   <li><%= "#{item.sparepart_no} #{item.sparepart_name} => #{SparepartTransDocItemIn.human_attribute_name(:quantity)}: #{item.quantity}" %></li>
                 <% end %>
               </ol>
             </td>
             <td>
               <div class="btn-group pull-right">
-                <% if can? :read, sparepart_trans_doc_in %>
-                  <%= link_to sparepart_trans_doc_in, class: "btn btn-mini" do %>
+                <% if can? :read, sparepart_trans_doc_out %>
+                  <%= link_to sparepart_trans_doc_out, class: "btn btn-mini" do %>
                     <i class="icon-eye-open"></i>
                     <span><%= t('.show', default: t('helpers.links.show')) %></span>
                   <% end %>
                 <% end %>
-                <% if can? :modify, sparepart_trans_doc_in %>
-                  <%= link_to edit_sparepart_trans_doc_in_path(sparepart_trans_doc_in), class: "btn btn-mini" do %>
+                <% if can? :modify, sparepart_trans_doc_out %>
+                  <%= link_to edit_sparepart_trans_doc_out_path(sparepart_trans_doc_out), class: "btn btn-mini" do %>
                     <i class="icon-pencil"></i>
                     <span><%= t('.edit', default: t('helpers.links.edit')) %></span>
                   <% end %>
                 <% end %>
-                <% if can? :destroy, sparepart_trans_doc_in %>
-                  <%= link_to sparepart_trans_doc_in, method: :delete, data: {confirm: t(".destroy_confirm", default: t("helpers.links.destroy_confirm"))}, class: "btn btn-danger btn-mini" do %>
+                <% if can? :destroy, sparepart_trans_doc_out %>
+                  <%= link_to sparepart_trans_doc_out, method: :delete, data: {confirm: t(".destroy_confirm", default: t("helpers.links.destroy_confirm"))}, class: "btn btn-danger btn-mini" do %>
                     <i class="icon-trash icon-white"></i>
                     <span><%= t('.destroy', default: t('helpers.links.destroy')) %></span>
                   <% end %>
@@ -99,6 +99,6 @@
 
 <div class="row-fluid">
   <div class="span4 offset4">
-    <%= paginate @sparepart_trans_doc_ins %>
+    <%= paginate @sparepart_trans_doc_outs %>
   </div>
 </div>

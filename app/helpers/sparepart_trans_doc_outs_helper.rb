@@ -1,0 +1,2 @@
+module SparepartTransDocOutsHelper
+end

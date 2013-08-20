@@ -21,9 +21,15 @@ defaults: &defaults
       tool:
         one: "工具"
         other: "工具"
+      repair_record:
+        one: "维修记录"
+        other: "维修记录"
       sparepart_trans_doc_in:
         one: "备件入库"
         other: "备件入库"
+      sparepart_trans_doc_out:
+        one: "备件出库"
+        other: "备件出库"
 
 
     attributes:
@@ -95,10 +101,11 @@ defaults: &defaults
         trans_date: "日期"
         doc_no: "单号"
         user_department_id: "使用部门"
-        trans_type: "入库类型"
+        trans_type_id: "入库类型"
         items: "备件明细"
         remark: "备注"
       sparepart_trans_doc_item_in:
+        sparepart_id: "备件"
         part_no: "备件号"
         part_name: "零件名称"
         quantity: "数量"
@@ -106,10 +113,11 @@ defaults: &defaults
         trans_date: "日期"
         doc_no: "单号"
         user_department_id: "使用部门"
-        trans_type: "出库类型"
+        trans_type_id: "出库类型"
         items: "备件明细"
         remark: "备注"
       sparepart_trans_doc_item_out:
+        sparepart_id: "备件"
         part_no: "备件号"
         part_name: "零件名称"
         quantity: "数量"
