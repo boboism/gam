@@ -1,0 +1,21 @@
+<h1>Listing fault_categories</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fault_categories.each do |fault_category| %>
+  <tr>
+    <td><%= link_to 'Show', fault_category %></td>
+    <td><%= link_to 'Edit', edit_fault_category_path(fault_category) %></td>
+    <td><%= link_to 'Destroy', fault_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fault category', new_fault_category_path %>

@@ -45,7 +45,7 @@ class Device < ActiveRecord::Base
   scope :search, lambda{|params={}|
     params ||= {}
     devices = scoped
-    if params[:keywords]
+    if params[:keywords].present?
       eq_keywords   = params[:keywords].split(/\s+/)
       like_keywords = eq_keywords.map{|word| "#{word}%"}
       devices       = devices.joins{category}.where{

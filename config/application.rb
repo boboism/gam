@@ -24,6 +24,7 @@ module Gam
       g.test_framework :rspec, fixture: true
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       
+      g.stylesheets false
       
       g.view_specs false
       g.helper_specs false

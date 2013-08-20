@@ -10,6 +10,10 @@
             <i class="icon-plus"></i>
             <span><%= t(".new", default: t("helpers.links.new")) %></span>
           <% end %>
+          <%= link_to devices_path(request.parameters.merge({:format => :xls})), class: "btn" do %>
+            <i class="icon-download-alt"></i>
+            <span><%= t(".download", default: t("helpers.links.download")) %></span>
+          <% end %>
         </div>
       <% end %>
       <div class="btn-group">

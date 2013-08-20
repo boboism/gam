@@ -15,6 +15,16 @@ defaults: &defaults
       category:
         one: "设备类别"
         other: "设备类别"
+      sparepart:
+        one: "备品配件"
+        other: "备品配件"
+      tool:
+        one: "工具"
+        other: "工具"
+      sparepart_trans_doc_in:
+        one: "备件入库"
+        other: "备件入库"
+
 
     attributes:
       device:
@@ -44,6 +54,68 @@ defaults: &defaults
       category:
         id: "ID"
         value: "名称"
+      sparepart:
+        part_no: '备件编号'
+        part_name: '备件名称'
+        specification: '规格'
+        part_type_id: '备件类型'
+        store_location: '存放位置'
+        uom: '计量单位'
+        unit_price: '单价'
+        manufacturer_id: '生产厂商'
+        supplier_id: '经销商'
+        stock_current: '当前库存'
+        stock_max: '最大库存'
+        stock_min: '最小库存'
+      tool:
+        tool_no: "工具号"
+        tool_name: "工具名称"
+        specification: "规格"
+        tool_type_id: "工具类型"
+        manufacturer_id: "制造商"
+        supplier_id: "供应商"
+        store_location: "存放地点"
+        serial_rule: "序列长度"
+      repair_record:
+        doc_no: "维修单号"
+        apply_user_id: "维修申请人"
+        apply_date: "申请日期"
+        apply_description: "故障描述"
+        repair_level: "维修级别"
+        repairman: "维修负责人"
+        fault_category_id: "故障类别"
+        status: "维修状态"
+        completed_at: "完成日期"
+        time_span: "维修用时"
+        cost_span: "维修费用"
+        analysis: "维修分析及工作明细"
+        feedback_score: "用户评分"
+        feedback: "详细意见"
+      sparepart_trans_doc_in:
+        trans_date: "日期"
+        doc_no: "单号"
+        user_department_id: "使用部门"
+        trans_type: "入库类型"
+        items: "备件明细"
+        remark: "备注"
+      sparepart_trans_doc_item_in:
+        part_no: "备件号"
+        part_name: "零件名称"
+        quantity: "数量"
+      sparepart_trans_doc_out:
+        trans_date: "日期"
+        doc_no: "单号"
+        user_department_id: "使用部门"
+        trans_type: "出库类型"
+        items: "备件明细"
+        remark: "备注"
+      sparepart_trans_doc_item_out:
+        part_no: "备件号"
+        part_name: "零件名称"
+        quantity: "数量"
+
 
 en:
+  <<: *defaults
+zh-CN:
   <<: *defaults

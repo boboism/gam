@@ -1,0 +1,31 @@
+<h1>Listing trans_doc_out_types</h1>
+
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Index</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trans_doc_out_types.each do |trans_doc_out_type| %>
+  <tr>
+    <td><%= trans_doc_out_type.key %></td>
+    <td><%= trans_doc_out_type.value %></td>
+    <td><%= trans_doc_out_type.description %></td>
+    <td><%= trans_doc_out_type.status %></td>
+    <td><%= trans_doc_out_type.index %></td>
+    <td><%= link_to 'Show', trans_doc_out_type %></td>
+    <td><%= link_to 'Edit', edit_trans_doc_out_type_path(trans_doc_out_type) %></td>
+    <td><%= link_to 'Destroy', trans_doc_out_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trans doc out type', new_trans_doc_out_type_path %>

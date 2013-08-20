@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <fieldset>
       <legend class="text-success"><%= t('.basic_info') %></legend>
-      <div class="row">
+      <div class="row-fluid">
         <span class="span6">
           <%= f.input :device_name, input_html: {class: "input-block-level"} %>
         </span>
@@ -12,7 +12,7 @@
           <%= f.input :device_no, input_html: {class: "input-block-level"} %>
         </span>
       </div>
-      <div class="row">
+      <div class="row-fluid">
         <span class="span6">
           <%= f.input :specification, input_html: {class: "input-block-level"} %> 
         </span>
@@ -20,7 +20,7 @@
           <%= f.input :category_id, collection: Category.selectable_list, input_html: {class: "input-block-level"} %>
         </span>
       </div>
-      <div class="row">
+      <div class="row-fluid">
         <span class="span6">
           <%= f.input :manufacturer_id, collection: Manufacturer.selectable_list, input_html: {class: "input-block-level"} %>
         </span>
@@ -35,7 +35,7 @@
     </fieldset>
     <fieldset>
       <legend class="text-success"><%= t('.accounting_info') %></legend>
-      <div class="row">
+      <div class="row-fluid">
         <span class="span4">
           <%= f.input :service_date, as: :string, input_html: {class: "input-block-level", :"data-behavior" => "datepicker"} %>
         </span>
@@ -46,7 +46,7 @@
           <%= f.input :responsible_by_id, collection: User.selectable_list, input_html: {class: "input-block-level"} %>
         </span>
       </div>
-      <div class="row">
+      <div class="row-fluid">
         <span class="span4">
           <%= f.input :depreciation_method, collection: Device.depreciation_method_list, input_html: {class: "input-block-level"} %>
         </span>
@@ -60,7 +60,7 @@
     </fieldset>
     <fieldset>
       <legend class="text-success"><%= t('.maintenance_info') %></legend>
-      <div class="row">
+      <div class="row-fluid">
         <span class="span4">
           <%= f.input :inspection_period, input_html: {class: "input-block-level"} %>
         </span>
@@ -71,7 +71,7 @@
           <%= f.input :inspection_date_next, as: :string, input_html: {class: "input-block-level", :"data-behavior" => "datepicker" } %>
         </span>
       </div>
-      <div class="row">
+      <div class="row-fluid">
         <span class="span4">
           <%= f.input :service_status, collection: Device.service_status_list, input_html: {class: "input-block-level"} %>
         </span>
@@ -79,7 +79,7 @@
           <%= f.input :user_department_id, collection: Department.selectable_list, input_html: {class: "input-block-level"} %>
         </span>
       </div>
-      <div class="row">
+      <div class="row-fluid">
         <span class="span4">
           <%= f.input :operator_id, collection: User.selectable_list, input_html: {class: "input-block-level"} %>
         </span>

@@ -6,6 +6,7 @@ en:
       basic_info: "基本信息"
       maintenance_info: "维保信息"
     show:
+      title: '设备明细'
       accounting_info: "资产信息"
       basic_info: "基本信息"
       maintenance_info: "维保信息"
@@ -13,3 +14,67 @@ en:
       title: "编辑设备"
     new:
       title: "新增设备"
+    index:
+      title: "设备管理"
+  spareparts:
+    new:
+      title: "新增备件"
+    edit:
+      title: "编辑备件"
+    index: 
+      title: "备件管理"
+    show:
+      title: "备件明细"
+  tools:
+    new:
+      title: "新建工具"
+    edit:
+      title: "編輯工具"
+    index:
+      title: "工具管理"
+    show:
+      title: "工具明细"
+  repair_records:
+    index:
+      title: "维修记录"
+    edit:
+      title: "编辑维修记录"
+    new:
+      title: "新建维修记录"
+    show:
+      title: "维修记录明细"
+  sparepart_trans_doc_ins:
+    index:
+      title: "备件入库记录"
+    edit:
+      title: "修改备件入库记录"
+    new:
+      title: "新增备件入库信息"
+    show:
+      title: "显示备件入库信息"
+  sparepart_trans_doc_outs:
+    index:
+      title: "备件出库记录"
+    edit:
+      title: "修改备件出库记录"
+    new:
+      title: "新增备件出库信息"
+    show:
+      title: "显示备件出库信息"
+  layouts:
+    navlist:
+      master_data: "基础参数"
+      device_management: "设备管理"  
+      sparepart_management: "备件管理"
+      tool_management: "工具管理"
+      document_management: "文档管理"
+      info_management: "信息管理"
+      maintanence_repair: "维修保养"
+      maintanence_record: "保养记录"
+      repair_record: "维修记录"
+      repair_record: "维修记录"
+      inspection_record: "设备检验"
+      department_management: "部门管理"
+      category_management: "设备类型"
+      tool_type_management: "工具类型"
+      serial_rule: "序号位数"

@@ -23,7 +23,6 @@ gem 'therubyracer'
 gem 'squeel'
 gem 'ruby-pinyin'
 gem "to_xls", :github => "dblock/to_xls", :branch => "to-xls-on-models"
-gem 'pry'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
@@ -34,6 +33,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'pry-rails'
 end
 group :development, :test do
   gem 'factory_girl_rails'

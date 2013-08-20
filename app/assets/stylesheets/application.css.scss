@@ -16,7 +16,7 @@
 .content {
   background-color: #eee;
   padding: 20px;
-  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  margin: 0 -10px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
@@ -29,5 +29,11 @@
   margin: 0;
   h3 {
     line-height: 0px;
+  }
+}
+
+.well {
+  .nav-header {
+    font-size: 14px;
   }
 }

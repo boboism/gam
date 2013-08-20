@@ -1,0 +1,75 @@
+<%= simple_form_for(@repair_record, :html => { :class => 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <fieldset>
+      <legend class="text-success"><%= t('.device_fault_desc') %></legend>
+      <div class="row-fluid">
+        <span class="span4">
+          <%= f.input :doc_no, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :apply_user_id, collection: User.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :apply_date, as: :string, input_html: {class: "input-block-level", :"data-behavior" => "datepicker"} %>
+        </span>
+      </div>
+      <div class="row-fluid">
+        <span class="span12">
+          <%= f.input :apply_description, input_html: {class: "input-block-level"} %> 
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="text-success"><%= t('.device_repair_desc') %></legend>
+      <div class="row-fluid">
+        <span class="span4">
+          <%= f.input :repair_level, collection: (1..5), input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :repairman, collection: User.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :fault_category_id, collection: FaultCategory.selectable_list, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+      <div class='row-fluid'>
+        <span class='span4'>
+          <%= f.input :status, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+      <div class="row-fluid">
+        <span class="span4">
+          <%= f.input :completed_at, as: :string, input_html: {class: "input-block-level", :"data-behavior" => "datepicker"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :time_span, input_html: {class: "input-block-level"} %>
+        </span>
+        <span class="span4">
+          <%= f.input :cost_span, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+      <div class="row-fluid">
+        <span class="span12">
+          <%= f.input :analysis, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="text-success"><%= t('.feedback') %></legend>
+      <div class="row-fluid">
+        <span class="span4">
+          <%= f.input :feedback_score, input_html: {class: "input-block-level", :"data-behavior" => "datepicker"} %>
+        </span>
+        <span class="span8">
+          <%= f.input :feedback, input_html: {class: "input-block-level"} %>
+        </span>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="">
+    <%= f.button :submit, class: "btn btn-large btn-block btn-primary" %>
+  </div>
+<% end %>

@@ -13,4 +13,7 @@ class User < ActiveRecord::Base
 
   belongs_to :department, class_name: "Department", foreign_key: "department_id"
 
+  has_many :reported_repair_records, class_name: "RepairRecord", foreign_key: "apply_user_id"
+  has_many :incharge_repari_records, class_name: "RepairRecord", foreign_key: "repairman_id"
+ 
 end

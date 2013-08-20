@@ -1,4 +1,28 @@
 Gam::Application.routes.draw do
+  resources :trans_doc_in_types
+
+
+  resources :trans_doc_out_types
+
+
+  resources :sparepart_trans_doc_ins
+
+
+  resources :fault_categories
+
+
+  resources :repair_records
+
+
+  resources :tools
+
+
+  resources :part_types
+
+
+  resources :spareparts
+
+
   resources :depreciation_methods
 
 

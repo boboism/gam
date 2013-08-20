@@ -5,12 +5,13 @@ class DevicesController < ApplicationController
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.accessible_by(current_ability).search(params[:search]).page(params[:page])
+    criteria = Device.accessible_by(current_ability).search(params[:search])
+    @devices = criteria.page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @devices }
-      format.xls { send_data @devices.to_xls }
+      format.xls { send_data criteria.all.to_xls }
     end
   end
 

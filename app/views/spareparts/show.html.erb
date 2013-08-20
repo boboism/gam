@@ -1,0 +1,69 @@
+<div class="row-fluid">
+  <div class="span5">
+    <h3><%= t('.title') %></h3>
+  </div>
+  <div class="span7">
+    <div class="pull-right">
+      <div class="btn-group">
+        <% if can? :read, Sparepart %>
+          <%= link_to spareparts_path, class: "btn" do %>
+            <i class="icon-list"></i>
+            <span><%= t(".index", default: t("helpers.links.index")) %></span>
+          <% end %>
+        <% end %>
+        <% if can? :modify, @sparepart %>
+          <%= link_to edit_sparepart_path(@sparepart), class: "btn" do %>
+            <i class="icon-pencil"></i>
+            <span><%= t(".edit", default: t("helpers.links.edit")) %></span>
+          <% end %>
+        <% end %>
+        <% if can? :destroy, @sparepart %>
+          <%= link_to @sparepart, method: :delete, data: {confirm: t(".destroy_confirm", default: t("helpers.links.destroy_confirm"))}, class: "btn btn-danger" do %>
+            <i class="icon-trash icon-white"></i>
+            <span><%= t('.destroy', default: t('helpers.links.destroy')) %></span>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="btn-group">
+        <%= render 'layouts/toolbar' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:part_name) %></h4></span>
+  <span class="span4 text-left"><h4><%= @sparepart.part_name %></h4></span>
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:part_no) %></h4></span>
+  <span class="span4 text-left"><h4><%= @sparepart.part_no %></h4></span>
+</div>
+<div class="row-fluid">
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:specification) %></h4></span>
+  <span class="span4 text-left"><h4><%= @sparepart.specification %></h4></span>
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:part_type_id) %></h4></span>
+  <span class="span4 text-left"><h4><%= @sparepart.part_type.try(:name) %></h4></span>
+</div>
+<div class="row-fluid">
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:uom) %></h4></span>
+  <span class="span4 text-left"><h4><%= @sparepart.uom %></h4></span>
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:unit_price) %></h4></span>
+  <span class="span4 text-left"><h4><%= @sparepart.unit_price %></h4></span>
+</div>
+<div class="row-fluid">
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:manufacturer_id) %></h4></span>
+  <span class="span4 text-left"><h4><%= @sparepart.manufacturer.try(:name) %></h4></span>
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:supplier_id) %></h4></span>
+  <span class="span4 text-left"><h4><%= @sparepart.supplier.try(:name) %></h4></span>
+</div>
+<div class="row-fluid">
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:store_location) %></h4></span>
+  <span class="span8 text-left"><h4><%= @sparepart.store_location %></h4></span>
+</div>
+<div class="row-fluid">
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:stock_current) %></h4></span>
+  <span class="span2 text-left"><h4><%= @sparepart.stock_current %></h4></span>
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:stock_max) %></h4></span>
+  <span class="span2 text-left"><h4><%= @sparepart.stock_max %></h4></span>
+  <span class="span2 text-right text-info"><h4><%= Sparepart.human_attribute_name(:stock_min) %></h4></span>
+  <span class="span2 text-left"><h4><%= @sparepart.stock_min %></h4></span>
+</div>

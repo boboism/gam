@@ -1,0 +1,2 @@
+module TransDocOutTypesHelper
+end

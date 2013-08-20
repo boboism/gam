@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Key:</b>
+  <%= @trans_doc_in_type.key %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @trans_doc_in_type.value %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @trans_doc_in_type.description %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @trans_doc_in_type.status %>
+</p>
+
+<p>
+  <b>Index:</b>
+  <%= @trans_doc_in_type.index %>
+</p>
+
+
+<%= link_to 'Edit', edit_trans_doc_in_type_path(@trans_doc_in_type) %> |
+<%= link_to 'Back', trans_doc_in_types_path %>
